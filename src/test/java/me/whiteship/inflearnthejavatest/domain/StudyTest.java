@@ -11,7 +11,7 @@ class StudyTest {
     void create() {
         Study study = new Study();
         assertNotNull(study);
-        System.out.println("create test")
+        System.out.println("create test");
     }
 
     //static으로 만들자! 리턴타입이있으면안되고, private도 안된다.
