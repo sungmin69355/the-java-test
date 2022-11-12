@@ -5,10 +5,12 @@ import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class) // _를 공백으로 치환해주는 설정 잘 사용x
 class StudyTest {
 
+    @DisplayName("생성") //테스트이름설정 이모지도 가능
     @Test
-    void create() {
+    void create_study() {
         Study study = new Study();
         assertNotNull(study);
         System.out.println("create test");
