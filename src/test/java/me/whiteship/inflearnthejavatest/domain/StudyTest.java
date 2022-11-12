@@ -15,7 +15,6 @@ class StudyTest {
         assertNotNull(study);
         System.out.println("create test");
     }
-
     //static으로 만들자! 리턴타입이있으면안되고, private도 안된다.
     @BeforeAll
     static void beforeAll(){
