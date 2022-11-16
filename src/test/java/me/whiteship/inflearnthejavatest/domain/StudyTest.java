@@ -37,11 +37,14 @@ class StudyTest {
 
     @DisplayName("스터디 인원테스트")
     @Test
+    @Tag("fast")
     void 스터디의_limit는_0보다_커야한다() {
         IllegalArgumentException exception =
                 assertThrows(IllegalArgumentException.class, () -> new Study(-10));
         assertEquals("limit은 0보다 커야 한다.", exception.getMessage());
     }
+
+
 
     //static으로 만들자! 리턴타입이있으면안되고, private도 안된다.
     @BeforeAll
