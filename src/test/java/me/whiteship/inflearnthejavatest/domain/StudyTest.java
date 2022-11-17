@@ -26,6 +26,7 @@ class StudyTest {
     @Test
     @EnabledOnOs({OS.MAC, OS.LINUX}) // 특정 OS설정가능
     @EnabledOnJre({JRE.JAVA_8, JRE.JAVA_11}) // 특정 자바버젼도 가능
+    @SlowTest
     void 로컬_테스트() {
         assumeTrue("LOCAL".equalsIgnoreCase(System.getenv("TEST_ENV"))); //TEST_ENV 환경변수가 LOCAL일 경우 만 True
         // false이면 여기 실행 x
@@ -37,7 +38,7 @@ class StudyTest {
 
     @DisplayName("스터디 인원테스트")
     @Test
-    @Tag("fast")
+    @FastTest
     void 스터디의_limit는_0보다_커야한다() {
         IllegalArgumentException exception =
                 assertThrows(IllegalArgumentException.class, () -> new Study(-10));
