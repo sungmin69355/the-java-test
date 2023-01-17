@@ -30,18 +30,21 @@ import static org.mockito.BDDMockito.then;
 import static org.mockito.Mockito.times;
 
 @SpringBootTest
-@ExtendWith(MockitoExtension.class)
+@ExtendWith(MockitoExtension.class) //Mock 객체를 생성
 @ActiveProfiles("test")
 @Testcontainers
 @Slf4j
 @ContextConfiguration(initializers = StudyServiceTest.ContainerPropertyInitializer.class)
 class StudyServiceTest {
 
-    @Mock MemberService memberService;
+    @Mock
+    MemberService memberService; //Mock 객체를 생성
 
-    @Autowired StudyRepository studyRepository;
+    @Autowired
+    StudyRepository studyRepository;
 
-    @Value("${container.port}") int port;
+    @Value("${container.port}")
+    int port;
 
     @Container
     static DockerComposeContainer composeContainer =
